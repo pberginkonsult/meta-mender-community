@@ -1,9 +1,10 @@
-From 9b2b9fbca52c8979b41722936617696622722ecf Mon Sep 17 00:00:00 2001
+From 05b9ec695fca9ca248e1560f6e487b00b1922e4f Mon Sep 17 00:00:00 2001
 From: Alexander Knaub <alexander.knaub@faro.com>
 Date: Tue, 19 Nov 2024 09:24:56 +0100
 Subject: [PATCH] edk2-nvidia: Enable runtime access to KernelCommandLine
  efivar
 
+Upstream-Status: Inappropriate [mender specific]
 ---
  Silicon/NVIDIA/Drivers/NvidiaConfigDxe/NvidiaConfigDxe.c   | 2 +-
  Silicon/NVIDIA/Drivers/NvidiaConfigDxe/NvidiaConfigHii.vfr | 2 +-
@@ -49,6 +50,3 @@ index b2c69f47..51299d60 100644
        ZeroMem (&AddlCmdLine, sizeof (AddlCmdLine));
      }
  
--- 
-2.34.1
-
