@@ -25,11 +25,11 @@ def tegra_mender_image_rootfs_size(d):
 
 # meta-tegra and tegraflash requirements
 IMAGE_CLASSES += "image_types_mender_tegra"
-IMAGE_FSTYPES += "tegraflash"
+IMAGE_FSTYPES += "tegraflash.tar.zst"
 
 ARTIFACTIMG_FSTYPE = "ext4"
 # Generate dataimg for use with tegraflash
-IMAGE_TYPEDEP:tegraflash += " dataimg"
+IMAGE_TYPEDEP:tegraflash.tar += " dataimg"
 IMAGE_FSTYPES += "dataimg"
 PREFERRED_PROVIDER_u-boot-fw-utils = "u-boot-fw-utils-tegra"
 PREFERRED_PROVIDER_libubootenv:tegra = "${@'libubootenv-fake' if d.getVar('PREFERRED_PROVIDER_virtual/bootloader').startswith('cboot') else 'libubootenv'}"
